@@ -26,8 +26,8 @@ function App() {
 
   const calculate = () => {
    if(!input || /[/*+\-]$/.test(input)){
-    setResult("error")
-    return
+    setResult("Error")
+    return;
    }
 
 
