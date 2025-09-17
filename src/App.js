@@ -25,6 +25,12 @@ function App() {
   };
 
   const calculate = () => {
+   if(!input || /[/*+\-]$/.test(input)){
+    setResult("error")
+    return
+   }
+
+
     try{
       const evaluated_res = eval(input);
 
@@ -32,7 +38,7 @@ function App() {
         setResult("Infinity")
       }
       else if (isNaN(evaluated_res)){
-        setResult("Nan")
+        setResult("NaN")
       }
       else{
         setResult(evaluated_res)
